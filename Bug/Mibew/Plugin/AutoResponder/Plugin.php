@@ -91,10 +91,8 @@ class Plugin extends \Mibew\Plugin\AbstractPlugin implements \Mibew\Plugin\Plugi
             }
             
             // Send a simple message for user.
-            $thread->postMessage(
-                \Mibew\Thread::KIND_INFO,
-                'Just wait for a while. An operator will answer you soon.'
-            );
+            $AutoResponder = new Base($thread);
+            $AutoResponder->sendResponce($function['arguments']['message']);
         }
     }
 }
