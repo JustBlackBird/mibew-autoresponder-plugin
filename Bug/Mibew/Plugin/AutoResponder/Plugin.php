@@ -83,10 +83,10 @@ class Plugin extends \Mibew\Plugin\AbstractPlugin implements \Mibew\Plugin\Plugi
                 return;
             }
             
-            // Check if Operator Connected or not
-            if ($thread->agentId>0) {
-                // Operator with id:$thread->agentId and name $thread->agentName
-                // is connected so do nothing
+            // Check for thread state to solve issu #2
+            if ($thread->istate != $thread::STATE_CLOSED &&  
+                $thread->istate != $thread::STATE_QUEUE) {
+                // No nead to autoresponder based on Thread_State
                 return;
             }
             
