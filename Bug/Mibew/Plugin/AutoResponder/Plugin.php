@@ -84,8 +84,8 @@ class Plugin extends \Mibew\Plugin\AbstractPlugin implements \Mibew\Plugin\Plugi
             }
             
             // Check for thread state to solve issu #2
-            if ($thread->istate != $thread::STATE_CLOSED &&  
-                $thread->istate != $thread::STATE_QUEUE) {
+            if ($thread->state != $thread::STATE_CLOSED &&  
+                $thread->state != $thread::STATE_QUEUE) {
                 // No nead to autoresponder based on Thread_State
                 return;
             }
