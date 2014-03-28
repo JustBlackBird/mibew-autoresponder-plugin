@@ -82,7 +82,14 @@ class Plugin extends \Mibew\Plugin\AbstractPlugin implements \Mibew\Plugin\Plugi
                 // Something went wrong. We cannot load the thread.
                 return;
             }
- 
+            
+            // Check if Operator Connected or not
+            if ($thread->agentId>0) {
+                // Operator with id:$thread->agentId and name $thread->agentName
+                // is connected so do nothing
+                return;
+            }
+            
             // Send a simple message for user.
             $thread->postMessage(
                 \Mibew\Thread::KIND_INFO,
