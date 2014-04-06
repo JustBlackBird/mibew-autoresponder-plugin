@@ -10,9 +10,9 @@ right side of the page or clone the git repository to your target machine.
 2. Copy all files to ```<mibew root>/plugins/```. Thus the main plugin's file
 should be situated in ```<mibew root>/plugins/Bug/Mibew/Plugin/AutoResponder/Plugin.php```
 3. Update Mibew configurations by adding the following lines at the end of
-```<mibew root>/libs/config.php``` file:  
+```<mibew root>/libs/config.php``` file:
 ```php
 $plugins_list[] = array(
-        'name' => 'Bug:AutoResponder',
+    'name' => 'Bug:AutoResponder',
 );
 ```
